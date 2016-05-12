@@ -2,7 +2,7 @@ import Component from '../../../../../decorators';
 import "angular-material/angular-material.min.css";
 
 @Component('app.application','selfServeComponent', {
-    template: '<md-content flex="nogrow" style="width: 800px; margin: 40px auto">' +
+    template: '<md-content flex="100">' +
     '<div>' +
     '<md-card>' +
     '<md-toolbar>' +
