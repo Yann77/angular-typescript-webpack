@@ -14,7 +14,7 @@ angular.module('app', ['ngComponentRouter', 'ngMaterial', 'app.application'])
     .value('$routerRootComponent', 'app')
     .component('app', {
         template: `<div layout="row" layout-align="center center">
-        <md-content layout="column" flex="75">
+        <md-content layout="column" flex="50">
         <h1>Self Serve Signup Process</h1>
         <ng-outlet></ng-outlet>
         </md-content>

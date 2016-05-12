@@ -1,2 +1,3 @@
 import "angular";
-angular.module("app.application", []);
+
+angular.module("app.application", ['ngMaterial', 'md-steppers']);
