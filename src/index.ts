@@ -13,13 +13,12 @@ import "./modules/application/angular/components/self-serve-app/self-serve-compo
 angular.module('app', ['ngComponentRouter', 'ngMaterial', 'app.application'])
     .value('$routerRootComponent', 'app')
     .component('app', {
-        template:
-        '<div layout="row" layout-align="center center">\n'+
-        '<md-content layout="column" flex="75">\n'+
-        '<h1>Self Serve Signup Process</h1>\n'+
-        '<ng-outlet></ng-outlet>\n'+
-        '</md-content>\n'+
-        '</div>\n',
+        template: `<div layout="row" layout-align="center center">
+        <md-content layout="column" flex="75">
+        <h1>Self Serve Signup Process</h1>
+        <ng-outlet></ng-outlet>
+        </md-content>
+        </div>`,
         $routeConfig: [
             {path: '/', name: 'SelfServeComponent', component: 'selfServeComponent', useAsDefault: true}
         ]
