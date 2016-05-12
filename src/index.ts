@@ -11,13 +11,13 @@ import "./modules/application/angular/components/selfServeApplication/SelfServeC
 
 //angular.module("app", ["ngComponentRouter", "app.application", "app.tweets", "app.about"])
 angular.module('app', ['ngComponentRouter', 'app.application'])
+    .value('$routerRootComponent', 'app')
     .component('app', {
         template:
-        '<h1>Self Serve Signup</h1>\n'+
-        '<a ng-link="[\'SelfServeSignup\']">GO GO</a>\n' +
+        '<h1>Self Serve Signup process</h1>\n'+
         '<ng-outlet></ng-outlet>\n',
         $routeConfig: [
-            {path: '/', name: 'SelfServeSignup', component: 'selfServeComponent', useAsDefault: true}
+            {path: '/', name: 'SelfServeComponent', component: 'selfServeComponent', useAsDefault: true}
         ]
     });
 

@@ -1,14 +1,4 @@
-export default function Component(moduleOrName: string | ng.IModule, selector: string, options: {
-    controller?: any,
-    controllerAs?: string,
-    template?: string | Function,
-    templateUrl?: string | Function,
-    bindings?: any,
-    transclude?: boolean,
-    require?: Object,
-    $canActivate?: () => boolean,
-    $routeConfig?: any[]
-}) {
+export default function Component(moduleOrName: string | ng.IModule, selector: string, options: ng.IComponentOptions) {
     return (controller: Function) => {
         var module = typeof moduleOrName === "string"
             ? angular.module(moduleOrName)

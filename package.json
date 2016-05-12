@@ -13,17 +13,18 @@
   "license": "MIT",
   "dependencies": {
     "@angular/router": "~0.2.0",
-    "angular": "1.5.0",
-    "angular-route": "1.5.0",
-    "bootstrap": "3.3.6",
+    "angular": "1.5.5",
+    "angular-animate": "~1.5.5",
+    "angular-aria": "~1.5.5",
+    "angular-material": "~1.0.8",
+    "angular-messages": "~1.5.5",
+    "angular-sanitize": "~1.5.5",
     "font-awesome": "4.5.0",
-    "jquery": "2.2.0",
-    "lodash": "4.0.1"
+    "lodash": "4.0.1",
+    "md-steppers": "~0.2.3"
   },
   "devDependencies": {
-    "angular-mocks": "1.5.0",
-    "babel-core": "6.4.5",
-    "babel-istanbul": "0.6.0",
+    "angular-mocks": "1.5.5",
     "browser-sync": "2.11.1",
     "browser-sync-webpack-plugin": "1.0.1",
     "compression-webpack-plugin": "0.3.0",
