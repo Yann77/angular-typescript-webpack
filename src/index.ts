@@ -13,9 +13,9 @@ import "./modules/application/angular/components/self-serve-app/self-serve-compo
 angular.module('app', ['ngComponentRouter', 'ngMaterial', 'app.application'])
     .value('$routerRootComponent', 'app')
     .component('app', {
-        template: `<div layout="row" layout-align="center center">
-        <md-content layout="column" flex="50">
-        <h1>Self Serve Signup Process</h1>
+        template: `<div layout="row" layout-align="center">
+        <md-content layout="column"flex="50">
+        <div layout="column" layout-align="center center" layout-padding class="acquisio-logo" flex></div>
         <ng-outlet></ng-outlet>
         </md-content>
         </div>`,

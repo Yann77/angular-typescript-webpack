@@ -13,13 +13,13 @@ import "md-steppers/dist/md-steppers.css";
     <md-toolbar>
     <div class="md-toolbar-tools">
         <h2>
-            <md-icon md-svg-icon="md-menu"></md-icon><span>Steps</span>
+            <span>Self Serve Signup Process</span>
         </h2>
     </div>
     </md-toolbar>
     <md-stepper-card-content class="md-no-padding">
        <md-steppers md-dynamic-height md-stretch-steppers="always" md-selected="ctrl.selectedStep" md-busy-text="'Processing...'" md-busy="ctrl.showBusyText">
-           <md-step label="Welcome">
+           <md-step label="Welcome" ng-disabled="ctrl.stepProgress < 1">
                <md-step-body>
                  <form name="Welcome" ng-submit="ctrl.submitCurrentStep(ctrl.stepData[0].data)">
                     <md-content class="md-padding">
@@ -47,10 +47,21 @@ import "md-steppers/dist/md-steppers.css";
                  </form>
                </md-step-body>
            </md-step>
-           <md-step label="Link Ad Accounts">
-               <md-step-body>Link your Ad Accounts here</md-step-body>
+           <md-step label="Link Ad Accounts" ng-disabled="ctrl.stepProgress < 2">
+               <md-step-body>
+                   <md-content layout="row" layout-align="center center">
+                     <md-card class="adwords"></md-card>
+                     <md-card class="adcenter"></md-card>
+                   </md-content>
+                   <md-step-actions layout="row">
+                        <div flex layout="row" layout-align="end top">
+                          <md-button ng-click="ctrl.moveToPreviousStep()">PREVIOUS</md-button>
+                          <md-button type="submit" ng-disabled="!ctrl.stepData[1].data.validated || ctrl.showBusyText" class="md-primary md-raised">NEXT</md-button>
+                        </div>
+                   </md-step-actions>
+               </md-step-body>
            </md-step>
-           <md-step label="Account Set Up">
+           <md-step label="Account Set Up" ng-disabled="ctrl.stepProgress < 3">
                <md-step-body>Let's start</md-step-body>
            </md-step>
        </md-steppers>
@@ -74,7 +85,7 @@ export class SelfServeComponent {
         this.maxStep = 3;
         this.showBusyText = false;
         this.stepData = [
-            { step: 1, completed: false, optional: false, data: { validated: false } },
+            { step: 1, completed: false, optional: false, data: { validated: false, email: 'yrichard@acquisio.com', organisation: 'Acquisio' } },
             { step: 2, completed: false, optional: false, data: {} },
             { step: 3, completed: false, optional: false, data: {} }];
     }

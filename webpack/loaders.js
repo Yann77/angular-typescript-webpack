@@ -17,13 +17,6 @@ module.exports = [
     }, {
         test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         loader: 'file-loader'
-    }, {
-        test: '\.jpg$',
-        exclude: /node_modules/,
-        loader: 'file'
-    }, {
-        test: '\.png$',
-        exclude: /node_modules/,
-        loader: 'url'
-    }
+    },
+    {test: /\.(png|gif)$/, exclude: /node_modules/, loader: 'url-loader?limit=64000000'}
 ];
