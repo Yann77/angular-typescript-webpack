@@ -52,9 +52,9 @@ import "md-steppers/dist/md-steppers.css";
                    <div layout="row" layout-align="center center" flex>
                      <h4>Setup your Ad Accounts here</h4>
                    </div>
-                   <md-content layout="row" layout-align="center center">
+                   <md-content class="md-padding" layout-xs="column" layout="row" layout-align="center center">                           
                      <md-card class="adwords-logo"></md-card>
-                     <md-card class="adcenter-logo"></md-card>
+                     <md-card class="adcenter-logo"></md-card>                     
                    </md-content>
                    <md-step-actions layout="row">
                         <div flex layout="row" layout-align="end top">
@@ -116,7 +116,6 @@ export class SelfServeComponent {
 
     static $inject = ["$q", "$timeout"];
     constructor(private $q, private $timeout) {
-        console.log('SelfServeComponent constructor...');
         this.selectedStep = 0;
         this.stepProgress = 1;
         this.maxStep = 3;
