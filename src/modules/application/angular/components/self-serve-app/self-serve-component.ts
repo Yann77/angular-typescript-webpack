@@ -62,7 +62,40 @@ import "md-steppers/dist/md-steppers.css";
                </md-step-body>
            </md-step>
            <md-step label="Account Set Up" ng-disabled="ctrl.stepProgress < 3">
-               <md-step-body>Let's start</md-step-body>
+               <md-step-body>
+                 <form name="accountSetup" ng-submit="ctrl.submitCurrentStep(ctrl.stepData[2].data)">
+                    <md-content class="md-padding">
+                        <div layout="row" layout-align="center top">
+                            <div flex="nogrow" style="width: 400px">
+                                <h4>Please setup your password</h4>
+                                <md-input-container class="md-block">
+                                    <label>Your password here</label>
+                                    <input ng-disabled="ctrl.stepData[2].data.completed" type="password" name="password" ng-model="ctrl.stepData[2].data.password" required />
+                                    <div ng-messages="step1.password.$error">
+                                        <div ng-message="required">
+                                            Password required to proceed on next step.
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                                <md-input-container class="md-block">
+                                    <label>Password confirmation</label>
+                                    <input ng-disabled="ctrl.stepData[2].data.completed" type="password" name="password_confirmation" ng-model="ctrl.stepData[2].data.password_confirmation" required />
+                                    <div ng-messages="step1.password.$error">
+                                        <div ng-message="required">
+                                            Password required to proceed on next step.
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                            </div>
+                        </div>
+                    </md-content>
+                    <md-step-actions layout="row">
+                        <div flex layout="row" layout-align="end top">                           
+                            <md-button type="submit" ng-disabled="!ctrl.stepData[2].data.password || !ctrl.stepData[2].data.password_confirmation || ctrl.showBusyText" class="md-primary md-raised">CREATE ACCOUNT</md-button>
+                        </div>
+                    </md-step-actions>
+                 </form>               
+               </md-step-body>
            </md-step>
        </md-steppers>
     </md-stepper-card-content>
