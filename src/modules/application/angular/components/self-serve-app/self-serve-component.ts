@@ -47,7 +47,7 @@ import "md-steppers/dist/md-steppers.css";
                  </form>
                </md-step-body>
            </md-step>
-           <md-step label="Link Ad Accounts" ng-disabled="ctrl.stepProgress < 2">
+           <md-step label="Link Ad Accounts" ng-disabled="ctrl.stepProgress < 2 || !ctrl.stepData[0].data.validated">
                <md-step-body>
                    <div layout="row" layout-align="center center" flex>
                      <h4>Setup your Ad Accounts here</h4>
@@ -64,7 +64,7 @@ import "md-steppers/dist/md-steppers.css";
                    </md-step-actions>
                </md-step-body>
            </md-step>
-           <md-step label="Account Set Up" ng-disabled="ctrl.stepProgress < 3">
+           <md-step label="Account Set Up" ng-disabled="ctrl.stepProgress < 3 || !ctrl.stepData[0].data.validated">
                <md-step-body>
                  <form name="accountSetup" ng-submit="ctrl.submitCurrentStep(ctrl.stepData[2].data)">
                     <md-content class="md-padding">
