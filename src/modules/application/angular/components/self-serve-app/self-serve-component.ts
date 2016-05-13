@@ -50,13 +50,13 @@ import "md-steppers/dist/md-steppers.css";
            <md-step label="Link Ad Accounts" ng-disabled="ctrl.stepProgress < 2">
                <md-step-body>
                    <md-content layout="row" layout-align="center center">
-                     <md-card class="adwords"></md-card>
-                     <md-card class="adcenter"></md-card>
+                     <md-card class="adwords-logo"></md-card>
+                     <md-card class="adcenter-logo"></md-card>
                    </md-content>
                    <md-step-actions layout="row">
                         <div flex layout="row" layout-align="end top">
                           <md-button ng-click="ctrl.moveToPreviousStep()">PREVIOUS</md-button>
-                          <md-button type="submit" ng-disabled="!ctrl.stepData[1].data.validated || ctrl.showBusyText" class="md-primary md-raised">NEXT</md-button>
+                          <md-button ng-click="ctrl.submitCurrentStep(ctrl.stepData[1].data)" ng-disabled="!ctrl.stepData[1].data.validated || ctrl.showBusyText" class="md-primary md-raised">NEXT</md-button>
                         </div>
                    </md-step-actions>
                </md-step-body>
@@ -86,7 +86,7 @@ export class SelfServeComponent {
         this.showBusyText = false;
         this.stepData = [
             { step: 1, completed: false, optional: false, data: { validated: false, email: 'yrichard@acquisio.com', organisation: 'Acquisio' } },
-            { step: 2, completed: false, optional: false, data: {} },
+            { step: 2, completed: false, optional: false, data: { validated: true } },
             { step: 3, completed: false, optional: false, data: {} }];
     }
 
