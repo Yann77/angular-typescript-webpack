@@ -49,6 +49,9 @@ import "md-steppers/dist/md-steppers.css";
            </md-step>
            <md-step label="Link Ad Accounts" ng-disabled="ctrl.stepProgress < 2">
                <md-step-body>
+                   <div layout="row" layout-align="center center" flex>
+                     <h4>Setup your Ad Accounts here</h4>
+                   </div>
                    <md-content layout="row" layout-align="center center">
                      <md-card class="adwords-logo"></md-card>
                      <md-card class="adcenter-logo"></md-card>
@@ -90,7 +93,8 @@ import "md-steppers/dist/md-steppers.css";
                         </div>
                     </md-content>
                     <md-step-actions layout="row">
-                        <div flex layout="row" layout-align="end top">                           
+                        <div flex layout="row" layout-align="end top">       
+                            <md-button ng-click="ctrl.moveToPreviousStep()">PREVIOUS</md-button>
                             <md-button type="submit" ng-disabled="!ctrl.stepData[2].data.password || !ctrl.stepData[2].data.password_confirmation || ctrl.showBusyText" class="md-primary md-raised">CREATE ACCOUNT</md-button>
                         </div>
                     </md-step-actions>
