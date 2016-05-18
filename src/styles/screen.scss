@@ -101,15 +101,24 @@ textarea {
 md-card.adcenter-logo {
   width: 200px;
   height: 200px;
-  background-image: url('../images/adcenter.png');
+  background-image: url('../content/images/adcenter.png');
 }
 md-card.adwords-logo {
   width: 200px;
   height: 200px;
-  background-image: url('../images/myadwords.png');
+  background-image: url('../content/images/myadwords.png');
 }
 div.acquisio-logo {
   width: 235px;
   height: 42px;
-  background-image: url('../images/acquisio-logo.png');
+  background-image: url('../content/images/acquisio-logo.png');
 }
+
+// ======== STEPPER =========
+.step { position: relative; min-height: 32px /* circle-size */ ; }
+.step > div:first-child { position: static; height: 0; }
+.step > div:last-child { margin-left: 32px ; padding-left: 16px; }
+.circle { background: #4285f4; width: 32px; height: 32px; line-height: 32px; border-radius: 16px; position: relative; color: white; text-align: center; }
+.line { position: absolute; border-left: 1px solid gainsboro; left: 16px; bottom: 10px; top: 42px; }
+.step:last-child .line { display: none; }
+.title { line-height: 32px; font-weight: bold; }

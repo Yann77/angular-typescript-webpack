@@ -8,7 +8,7 @@ import "font-awesome/css/font-awesome.css";
 import "./styles/screen.scss";
 
 // load specific components
-import "./modules/application/angular/components/self-serve-app/self-serve-component";
+import "./modules/application/angular/components/self-serve-app/self-serve.component";
 
 angular.module('app', ['ngComponentRouter', 'ngMaterial', 'app.application'])
     .value('$routerRootComponent', 'app')
