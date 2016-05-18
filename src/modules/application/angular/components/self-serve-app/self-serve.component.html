@@ -1,0 +1,68 @@
+<md-content flex="100">
+  <div>
+    <md-card>
+      <md-toolbar>
+        <div class="md-toolbar-tools">
+          <h2>
+            <span>Self Serve Signup Process</span>
+          </h2>
+        </div>
+      </md-toolbar>
+      <md-card-content >
+        <div layout="column" layout-align="center start">
+          <p>
+            <md-button class="md-fab md-mini md-primary">
+              <!--<md-icon md-svg-icon="action:done"></md-icon>-->
+              <i class="material-icons">&#10003;</i>
+            </md-button>
+            Sign Up
+          </p>
+        </div>
+
+        <div layout="column" layout-align="center start">
+          <div>
+            <md-button class="md-fab md-mini md-primary" aria-readonly="true">2</md-button>
+            Link Ad Account
+          </div>
+          <md-content ng-show="ctrl.selectedStep == 0" class="md-padding">
+            <div class="md-padding" layout="row" layout-align="center center" flex>
+              <md-card class="adwords-logo"></md-card>
+              <md-card class="adcenter-logo"></md-card>
+            </div>
+            <md-button ng-click="ctrl.nextStep()">Next</md-button>
+          </md-content>
+        </div>
+
+        <div layout="column" layout-align="center start">
+          <div>
+            <md-button class="md-fab md-mini md-primary">3</md-button>
+            Account Set Up
+          </div>
+          <div layout="row" layout-align="center top" ng-show="ctrl.selectedStep == 1">
+            <div flex="nogrow" style="width: 400px">
+              <h4>Please setup your password</h4>
+              <md-input-container class="md-block">
+                <label>Your password here</label>
+                <input ng-disabled="ctrl.stepData[1].data.completed" type="password" name="password" ng-model="ctrl.stepData[2].data.password" required />
+                <div ng-messages="step1.password.$error">
+                  <div ng-message="required">
+                    Password required to proceed on next step.
+                  </div>
+                </div>
+              </md-input-container>
+              <md-input-container class="md-block">
+                <label>Password confirmation</label>
+                <input ng-disabled="ctrl.stepData[1].data.completed" type="password" name="password_confirmation" ng-model="ctrl.stepData[2].data.password_confirmation" required />
+                <div ng-messages="step1.password.$error">
+                  <div ng-message="required">
+                    Password required to proceed on next step.
+                  </div>
+                </div>
+              </md-input-container>
+            </div>
+          </div>
+        </div>
+      </md-card-content>
+    </md-card>
+  </div>
+</md-content>

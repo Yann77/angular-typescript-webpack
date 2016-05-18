@@ -21,14 +21,8 @@ export class SelfServeComponent {
         this.maxStep = 3;
         this.showBusyText = false;
         this.stepData = [
-            {
-                step: 1,
-                completed: false,
-                optional: false,
-                data: {validated: false, email: 'yrichard@acquisio.com', organisation: 'Acquisio'}
-            },
-            {step: 2, completed: false, optional: false, data: {validated: true}},
-            {step: 3, completed: false, optional: false, data: {}}];
+            {step: 1, completed: false, optional: false, data: {validated: true}},
+            {step: 2, completed: false, optional: false, data: {}}];
     }
 
     public nextStep():void {
