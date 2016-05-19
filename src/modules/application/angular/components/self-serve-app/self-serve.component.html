@@ -9,58 +9,66 @@
         </div>
       </md-toolbar>
       <md-card-content >
-        <div layout="column" layout-align="center start">
-          <p>
-            <md-button class="md-fab md-mini md-primary no-click">
-              <!--<md-icon md-svg-icon="action:done"></md-icon>-->
-              <i class="material-icons">&#10003;</i>
-            </md-button>
-            Sign Up
-          </p>
+
+        <div>
+          <md-button class="md-fab md-mini md-primary no-click">
+            <!--<md-icon md-svg-icon="action:done"></md-icon>-->
+            <i class="material-icons">&#10003;</i>
+          </md-button>
+          Sign Up
+        </div>
+        <div>
+          <md-button class="md-fab md-mini md-primary no-click">2</md-button>
+          Link Ad Account
         </div>
 
-        <div layout="column" layout-align="center start">
-          <div>
-            <md-button class="md-fab md-mini md-primary no-click">2</md-button>
-            Link Ad Account
-          </div>
+        <div layout="row" layout-align="center start">
           <md-content ng-show="ctrl.selectedStep == 1" class="md-padding">
-            <div class="md-padding" layout="row" layout-align="center center" flex>
+            <div class="md-padding" layout="row" layout-xs="column" layout-sm="column" layout-align="center center">
               <md-card class="adwords-logo"></md-card>
               <md-card class="adcenter-logo"></md-card>
             </div>
-            <md-button ng-click="ctrl.nextStep()">Next</md-button>
+            <div layout="row" layout-align="end center">
+              <md-button ng-click="ctrl.nextStep()">Next</md-button>
+            </div>
           </md-content>
         </div>
 
-        <div layout="column" layout-align="center start">
-          <div>
-            <md-button class="md-fab md-mini md-primary no-click">3</md-button>
-            Account Set Up
-          </div>
-          <div layout="row" layout-align="center top" ng-show="ctrl.selectedStep == 2">
-            <div flex="nogrow" style="width: 400px">
-              <h4>Please setup your password</h4>
-              <md-input-container class="md-block">
-                <label>Your password here</label>
-                <input ng-disabled="ctrl.stepData[1].data.completed" type="password" name="password" ng-model="ctrl.stepData[2].data.password" required />
-                <div ng-messages="step1.password.$error">
-                  <div ng-message="required">
-                    Password required to proceed on next step.
-                  </div>
+        <div>
+          <md-button class="md-fab md-mini md-primary no-click">3</md-button>
+          Account Set Up
+        </div>
+        <div layout="row" layout-align="center start">
+          <md-content class="md-padding">
+            <form name="accountSetup" ng-submit="ctrl.submitCurrentStep(ctrl.stepData[2].data)">
+              <div layout="row" layout-align="center top">
+                <div flex="nogrow" style="width: 400px">
+                  <h4>Please setup your password</h4>
+                  <md-input-container class="md-block">
+                    <label>Your password here</label>
+                    <input ng-disabled="ctrl.stepData[2].data.completed" type="password" name="password" ng-model="ctrl.stepData[2].data.password" required />
+                    <div ng-messages="step1.password.$error">
+                      <div ng-message="required">
+                        Password required to proceed on next step.
+                      </div>
+                    </div>
+                  </md-input-container>
+                  <md-input-container class="md-block">
+                    <label>Password confirmation</label>
+                    <input ng-disabled="ctrl.stepData[2].data.completed" type="password" name="password_confirmation" ng-model="ctrl.stepData[2].data.password_confirmation" required />
+                    <div ng-messages="step1.password.$error">
+                      <div ng-message="required">
+                        Password required to proceed on next step.
+                      </div>
+                    </div>
+                  </md-input-container>
                 </div>
-              </md-input-container>
-              <md-input-container class="md-block">
-                <label>Password confirmation</label>
-                <input ng-disabled="ctrl.stepData[1].data.completed" type="password" name="password_confirmation" ng-model="ctrl.stepData[2].data.password_confirmation" required />
-                <div ng-messages="step1.password.$error">
-                  <div ng-message="required">
-                    Password required to proceed on next step.
-                  </div>
-                </div>
-              </md-input-container>
+              </div>
+            </form>
+            <div layout="row" layout-align="end center">
+              <md-button type="submit" ng-disabled="!ctrl.stepData[2].data.password || !ctrl.stepData[2].data.password_confirmation || ctrl.showBusyText" class="md-primary md-raised">CREATE ACCOUNT</md-button>
             </div>
-          </div>
+          </md-content>
         </div>
       </md-card-content>
     </md-card>
