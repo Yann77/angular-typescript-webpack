@@ -113,3 +113,7 @@ div.acquisio-logo {
   height: 42px;
   background-image: url('../content/images/acquisio-logo.png');
 }
+
+.md-button.no-click {
+  cursor: default;
+}

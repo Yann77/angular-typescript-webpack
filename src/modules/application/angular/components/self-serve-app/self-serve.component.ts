@@ -16,7 +16,7 @@ export class SelfServeComponent {
     static $inject = ["$q", "$timeout"];
 
     constructor(private $q, private $timeout) {
-        this.selectedStep = 0;
+        this.selectedStep = 1;
         this.stepProgress = 1;
         this.maxStep = 3;
         this.showBusyText = false;
