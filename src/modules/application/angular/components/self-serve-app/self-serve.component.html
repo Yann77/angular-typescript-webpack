@@ -10,15 +10,17 @@
       </md-toolbar>
       <md-card-content >
 
-        <div>
-          <md-button class="md-fab md-mini md-primary no-click">
-            <!--<md-icon md-svg-icon="action:done"></md-icon>-->
-            <i class="material-icons">&#10003;</i>
-          </md-button>
+        <div layout="row" layout-align="start center">
+          <!--<md-button class="md-fab md-mini md-primary no-click">-->
+            <!--&lt;!&ndash;<md-icon md-svg-icon="action:done"></md-icon>&ndash;&gt;-->
+            <!--<i class="material-icons">&#10003;</i>-->
+          <!--</md-button>-->
+          <div class="circle">&#10003;</div>
           Sign Up
         </div>
-        <div>
-          <md-button class="md-fab md-mini md-primary no-click">2</md-button>
+        <div layout="row" layout-align="start center">
+          <!--<md-button class="md-fab md-mini md-primary no-click">2</md-button>-->
+          <div class="circle">2</div>
           Link Ad Account
         </div>
 
@@ -29,17 +31,18 @@
               <md-card class="adcenter-logo"></md-card>
             </div>
             <div layout="row" layout-align="end center">
-              <md-button ng-click="ctrl.nextStep()">Next</md-button>
+              <md-button ng-click="ctrl.nextStep()" id="step1Next">Next</md-button>
             </div>
           </md-content>
         </div>
 
-        <div>
-          <md-button class="md-fab md-mini md-primary no-click">3</md-button>
+        <div layout="row" layout-align="start center">
+          <!--<md-button class="md-fab md-mini md-primary no-click">3</md-button>-->
+          <div class="circle">3</div>
           Account Set Up
         </div>
         <div layout="row" layout-align="center start">
-          <md-content class="md-padding">
+          <md-content ng-show="ctrl.selectedStep == 2" class="md-padding">
             <form name="accountSetup" ng-submit="ctrl.submitCurrentStep(ctrl.stepData[2].data)">
               <div layout="row" layout-align="center top">
                 <div flex="nogrow" style="width: 400px">

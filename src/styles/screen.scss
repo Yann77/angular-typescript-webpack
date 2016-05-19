@@ -98,6 +98,8 @@ textarea {
   resize: none;
 }
 
+//=============== CUSTOM ================
+
 md-card.adcenter-logo {
   width: 200px;
   height: 200px;
@@ -116,4 +118,22 @@ div.acquisio-logo {
 
 .md-button.no-click {
   cursor: default;
+}
+
+
+.circle {
+  background: #106cc8;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  border-radius: 16px;
+  position: relative;
+  color: white;
+  text-align: center;
+  margin: 0 12px 12px 0;
+}
+
+.title {
+  line-height: 32px;
+  font-weight: bold;
 }
