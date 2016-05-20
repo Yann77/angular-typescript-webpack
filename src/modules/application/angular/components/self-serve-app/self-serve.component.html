@@ -4,7 +4,7 @@
       <md-toolbar>
         <div class="md-toolbar-tools">
           <h2>
-            <span>Self Serve Signup Process</span>
+            <span>Self Serve Signup Prototype</span>
           </h2>
         </div>
       </md-toolbar>
@@ -27,7 +27,7 @@
         <div layout="row" layout-align="center start" ng-show="ctrl.selectedStep == 1" class="step">
           <md-content class="md-padding">
             <div class="md-padding" layout="row" layout-xs="column" layout-sm="column" layout-align="center center">
-              <md-card class="adwords-logo"></md-card>
+              <md-card class="adwords-logo" ng-click="ctrl.openOauthPlayground()"></md-card>
               <md-card class="adcenter-logo"></md-card>
             </div>
             <div layout="row" layout-align="end center">
@@ -39,7 +39,7 @@
         <div layout="row" layout-align="start center">
           <!--<md-button class="md-fab md-mini md-primary no-click">3</md-button>-->
           <div class="circle">3</div>
-          Account Set Up
+          Account Setup
         </div>
         <div layout="row" layout-align="center start" ng-show="ctrl.selectedStep == 2" class="step">
           <md-content  class="md-padding">
@@ -52,7 +52,7 @@
                   </md-input-container>
 
                   <md-input-container class="md-block">
-                    <input  type="text" name="agencyName" ng-model="ctrl.stepData[2].data.agencyName" disabled />
+                    <input  type="text" name="agencyName" ng-model="ctrl.stepData[2].data.agencyName" />
                   </md-input-container>
 
                   <md-input-container class="md-block">
@@ -77,8 +77,8 @@
               </div>
             </form>
             <div layout="row" layout-align="end center">
-              <md-checkbox class="md-primary">Accept terms and conditions</md-checkbox>
-              <md-button type="submit" ng-disabled="!ctrl.stepData[2].data.password || !ctrl.stepData[2].data.password_confirmation || ctrl.showBusyText" class="md-primary md-raised">CREATE ACCOUNT</md-button>
+              <md-checkbox class="md-primary" ng-model="ctrl.termsAccepted">Accept terms and conditions</md-checkbox>
+              <md-button type="submit" ng-disabled="!ctrl.stepData[2].data.password || !ctrl.stepData[2].data.password_confirmation || ctrl.showBusyText || !ctrl.termsAccepted" class="md-primary md-raised">START FREE TRIAL</md-button>
             </div>
           </md-content>
         </div>

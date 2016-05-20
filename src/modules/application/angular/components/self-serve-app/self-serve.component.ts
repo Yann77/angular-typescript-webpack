@@ -7,6 +7,7 @@ import "angular-material/angular-material.min.css";
     template: require<string>('./self-serve.component.html')
 })
 export class SelfServeComponent {
+    termsAccepted:boolean;
     selectedStep:number;
     stepProgress:number;
     maxStep:number;
@@ -16,6 +17,7 @@ export class SelfServeComponent {
     static $inject = ["$q", "$timeout"];
 
     constructor(private $q, private $timeout) {
+        this.termsAccepted = false;
         this.selectedStep = 1;
         this.stepProgress = 1;
         this.maxStep = 3;
@@ -61,5 +63,10 @@ export class SelfServeComponent {
             this.showBusyText = false;
             this.nextStep();
         }
+    }
+
+    public openOauthPlayground():void {
+        let url:string = 'https://accounts.google.com/o/oauth2/auth?redirect_uri=https%3A%2F%2Fdevelopers.google.com%2Foauthplayground&response_type=code&client_id=407408718192.apps.googleusercontent.com&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&approval_prompt=force&access_type=offline';
+        window.open(url, '', 'width=450,height=600');
     }
 }
