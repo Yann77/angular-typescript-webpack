@@ -14,11 +14,11 @@ angular.module('app', ['ngComponentRouter', 'ngMaterial', 'app.application'])
     .value('$routerRootComponent', 'app')
     .component('app', {
         template: `<div layout="row" layout-align="center">
-        <md-content layout="column"flex="50">
-        <div layout="column" layout-align="center center" layout-padding class="acquisio-logo" flex></div>
-        <ng-outlet></ng-outlet>
-        </md-content>
-        </div>`,
+                     <md-content layout="column" flex-gt-sm="50" flex="100">
+                       <div layout="column" layout-align="center center" layout-padding class="acquisio-logo" flex></div>
+                       <ng-outlet></ng-outlet>
+                     </md-content>
+                   </div>`,
         $routeConfig: [
             {path: '/', name: 'SelfServeComponent', component: 'selfServeComponent', useAsDefault: true}
         ]
