@@ -22,7 +22,8 @@ export class SelfServeComponent {
         this.showBusyText = false;
         this.stepData = [
             {step: 1, completed: false, optional: false, data: {validated: true}},
-            {step: 2, completed: false, optional: false, data: {}}];
+            {step: 2, completed: false, optional: false, data: {}},
+            {step: 2, completed: false, optional: false, data: {email: 'bob@acme.com', agencyName: 'ACME inc.'}}];
     }
 
     public nextStep():void {
