@@ -7,7 +7,7 @@ webpackConfig.entry = {};
 module.exports = function (config) {
     config.set({
         basePath: '',
-        frameworks: ['jasmine'],
+        frameworks: ['mocha', 'chai', 'sinon'],
         port: 9876,
         colors: true,
         logLevel: config.LOG_INFO,
@@ -19,11 +19,6 @@ module.exports = function (config) {
             './node_modules/phantomjs-polyfill/bind-polyfill.js',
             './src/test.ts'
         ],
-        babelPreprocessor: {
-            options: {
-                presets: ['es2015']
-            }
-        },
         preprocessors: {
             'src/test.ts': ['webpack'],
             'src/**/!(*.spec)+(.js)': ['coverage']
