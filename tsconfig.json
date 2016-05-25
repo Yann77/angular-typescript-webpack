@@ -8,14 +8,16 @@
     "experimentalDecorators": true,
     "outDir": "out"
   },
+  "files": [
+    "src/ts-definitions/require.d.ts"
+  ],
   "exclude": [
     "out",
     "node_modules",
     "dist",
     "dev",
-    "typings/main.d.ts",
-    "typings/main",
-    "reports"
+    "reports",
+    "typings"
   ],
   "version": "1.7.5"
 }

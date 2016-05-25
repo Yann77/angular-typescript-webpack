@@ -137,3 +137,92 @@ div.acquisio-logo {
   line-height: 32px;
   font-weight: bold;
 }
+
+//.animate-enter,
+//.animate-leave
+//{
+//  -webkit-transition: 1s cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+//  -moz-transition: 1s cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+//  -ms-transition: 1s cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+//  -o-transition: 1s cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+//  transition:1s cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+//}
+//
+//.animate-enter {
+//  top: 100%;
+//}
+//.animate-enter.animate-enter-active {
+//  top: 0;
+//}
+//
+//.animate-leave {
+//  top: 0;
+//}
+//.animate-leave.animate-leave-active{
+//  top: -100%;
+//}
+
+.animate-show {
+  height: 100%;
+  max-height: 100%;
+  opacity: 1;
+  //padding: 100px;
+}
+
+.animate-show.ng-hide-add, .animate-show.ng-hide-remove {
+  transition: all linear 1s;
+}
+
+.animate-show.ng-hide {
+  height: 0;
+  max-height: 0;
+  transition: all linear 1s;
+  //padding: 0 100px;
+}
+
+
+//.animate-show.ng-hide {
+//  height:0;
+//  transition:height 0.35s ease;
+//  overflow:hidden;
+//  position:relative;
+//}
+//
+//.animate-show {
+//  height:100%;
+//  transition:height 0.35s ease;
+//  overflow:hidden;
+//  position:relative;
+//}
+//
+//.animate-show.ng-hide-remove,
+//.animate-show.ng-hide-add {
+//  /* remember, the .hg-hide class is added to element
+//  when the active class is added causing it to appear
+//  as hidden. Therefore set the styling to display=block
+//  so that the hide animation is visible */
+//  display:block!important;
+//}
+//
+//
+//.animate-show.ng-hide-add {
+//  animation-name: hide;
+//  -webkit-animation-name: hide;
+//
+//  animation-duration: .5s;
+//  -webkit-animation-duration: .5s;
+//
+//  animation-timing-function: ease-in;
+//  -webkit-animation-timing-function: ease-in;
+//}
+//
+//.animate-show.ng-hide-remove {
+//  animation-name: show;
+//  -webkit-animation-name: show;
+//
+//  animation-duration: .5s;
+//  -webkit-animation-duration: .5s;
+//
+//  animation-timing-function: ease-out;
+//  -webkit-animation-timing-function: ease-out;
+//}
