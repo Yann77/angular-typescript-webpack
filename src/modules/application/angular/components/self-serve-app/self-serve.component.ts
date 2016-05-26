@@ -4,7 +4,7 @@ import "angular-material/angular-material.min.css";
 
 @Component('app.application', 'selfServeComponent', {
     controllerAs: 'ctrl',
-    template: require<string>('./self-serve.component.html')
+    template: require('./self-serve.component.html')
 })
 export class SelfServeComponent {
     termsAccepted:boolean;

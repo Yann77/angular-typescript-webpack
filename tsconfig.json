@@ -8,9 +8,6 @@
     "experimentalDecorators": true,
     "outDir": "out"
   },
-  "files": [
-    "src/ts-definitions/require.d.ts"
-  ],
   "exclude": [
     "out",
     "node_modules",
