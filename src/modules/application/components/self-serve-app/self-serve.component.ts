@@ -1,6 +1,8 @@
-import Component from '../../../../../decorators';
+import Component from '../../../../decorators';
 
 import "angular-material/angular-material.min.css";
+import '../../../core/api.service';
+import IRequestConfig = angular.IRequestConfig;
 
 @Component('app.application', 'selfServeComponent', {
     controllerAs: 'ctrl',
@@ -14,9 +16,9 @@ export class SelfServeComponent {
     showBusyText:boolean;
     stepData = [];
 
-    static $inject = ["$q", "$timeout"];
+    static $inject = ["$q", "$timeout", "apiService"];
 
-    constructor(private $q, private $timeout) {
+    constructor(private $q, private $timeout, private apiService) {
         this.termsAccepted = false;
         this.selectedStep = 1;
         this.stepProgress = 1;
@@ -26,6 +28,24 @@ export class SelfServeComponent {
             {step: 1, completed: false, optional: false, data: {validated: true}},
             {step: 2, completed: false, optional: false, data: {}},
             {step: 2, completed: false, optional: false, data: {email: 'bob@acme.com', agencyName: 'ACME inc.'}}];
+    }
+
+    $routerOnActivate = (next): void => {
+        console.log('routerOnActivate, email = ' + next.params.email);
+        let config: IRequestConfig = {
+            method: 'POST',
+            url: '/api/users/me',
+            responseType: 'json',
+            data: {
+                email: next.params.email
+            }
+        };
+
+        this.apiService.asObservable(config)
+            .subscribe((results) => {
+                if (results.data) {
+                }
+            });
     }
 
     public nextStep():void {
