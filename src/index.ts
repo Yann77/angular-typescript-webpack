@@ -26,7 +26,7 @@ angular.module('app', ['ngComponentRouter', 'rx', 'ngMaterial', 'app.application
                      </md-content>
                    </div>`,
         $routeConfig: [
-            {path: '/join/:email', name: 'SelfServeComponent', component: 'selfServeComponent', useAsDefault: true}
+            {path: '/join', name: 'SelfServeComponent', component: 'selfServeComponent', useAsDefault: true}
         ]
     })
 class app {}
